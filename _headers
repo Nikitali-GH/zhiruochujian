@@ -1,0 +1,4 @@
+/content-plans/*
+  X-Robots-Tag: noindex
+/articles/article-template.html
+  X-Robots-Tag: noindex
