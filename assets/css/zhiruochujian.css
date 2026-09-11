@@ -299,3 +299,56 @@ body.magazine { overflow-x: hidden; }
 @media (max-width: 736px) {
   #header nav { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 8px 14px; font-size: 12px; line-height: 1.4; }
 }
+
+/* 图文紧密编排：让首页阅读单元更像杂志版面 */
+.magazine .journal-posts { display: block; }
+.magazine .featured-post { display: grid; grid-template-columns: 43% minmax(0, 57%); column-gap: 30px; align-items: start; padding-right: 0 !important; }
+.featured-post .image { grid-row: 1 / span 5; margin: 0; }
+.featured-post .image img { aspect-ratio: 1.25; height: 100%; object-fit: cover; }
+.featured-post .section-label, .featured-post h3, .featured-post .publication-note, .featured-post .text-link { grid-column: 2; }
+.featured-post .section-label { margin-top: 2px; }
+.featured-post h3 { margin: 4px 0 10px; }
+.side-posts { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; border-top: 1px solid var(--rule); padding: 22px 0 0; margin-top: 30px; }
+.magazine .side-posts article { padding: 0; }
+.side-posts article + article { border-top: 0; border-left: 1px solid var(--rule); padding-left: 26px; }
+.editorial-list { margin-top: 14px; }
+.editorial-columns { gap: 40px; }
+.editorial-columns article { padding-top: 14px; }
+.editorial-columns h3 { margin-bottom: 7px; }
+#stories { grid-template-columns: 1.1fr .9fr; column-gap: 38px; row-gap: 24px; }
+#stories .story-heading { grid-column: 2; grid-row: 1; padding: 0; }
+#stories .story-copy { grid-column: 2; grid-row: 2; }
+#stories .story-photo { grid-column: 1; grid-row: 1 / span 2; width: 100%; margin: 0; align-self: stretch; }
+#stories .story-photo img { aspect-ratio: 1.15; height: 100%; }
+#stories .story-list { grid-column: 1 / -1; grid-template-columns: 1.15fr .85fr; gap: 30px; padding-top: 8px; border-top: 1px solid var(--rule); }
+#stories .story-list p { padding-top: 12px; }
+#discover .discover-photo { width: 42%; float: right; margin: -4px 0 14px 32px; }
+#discover .discover-photo img { aspect-ratio: 1.3; }
+#discover .perspectives { clear: both; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+#discover .perspectives details:nth-child(2), #discover .perspectives details:nth-child(5) { transform: none; }
+.worth-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.worth-grid article { padding-top: 0; border-top: 0; }
+.worth-thumb { display: block; width: 100%; aspect-ratio: 1.45; object-fit: cover; border-radius: 12px 3px 12px 3px; margin-bottom: 13px; }
+.worth-grid article:nth-child(2), .worth-grid article:nth-child(3) { transform: none; }
+#main > .inner > #podcast { margin-top: 18px; padding: 28px 32px; }
+@media (max-width: 736px) {
+  .magazine .featured-post { display: grid; grid-template-columns: 1fr; gap: 0; }
+  .featured-post .image { grid-row: auto; margin-bottom: 16px; }
+  .featured-post .image img { aspect-ratio: 1.5; height: auto; }
+  .featured-post .section-label, .featured-post h3, .featured-post .publication-note, .featured-post .text-link { grid-column: 1; }
+  .side-posts { grid-template-columns: 1fr; gap: 0; margin-top: 24px; }
+  .side-posts article + article { border-left: 0; border-top: 1px solid var(--rule); padding: 20px 0 0; margin-top: 20px; }
+  #stories .story-heading, #stories .story-copy, #stories .story-photo { grid-column: 1; grid-row: auto; }
+  #stories .story-photo { width: 100%; }
+  #stories .story-photo img { aspect-ratio: 1.45; height: auto; }
+  #stories .story-list { grid-template-columns: 1fr; gap: 0; }
+  #discover .discover-photo { width: 100%; float: none; margin: 0 0 16px; }
+  #discover .perspectives { grid-template-columns: 1fr 1fr; gap: 0 18px; }
+  .worth-grid { grid-template-columns: 1fr; gap: 24px; }
+  .worth-thumb { aspect-ratio: 1.55; }
+  #main > .inner > #podcast { margin-top: 10px; }
+}
+
+/* 保持编辑区块在不同屏幕宽度内闭合 */
+#stories { box-sizing: border-box; width: 100%; margin-left: 0; margin-right: 0; }
+@media (max-width: 736px) { #stories { margin-left: 0; margin-right: 0; padding-left: 24px !important; padding-right: 24px !important; } }
