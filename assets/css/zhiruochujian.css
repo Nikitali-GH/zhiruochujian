@@ -258,3 +258,41 @@ body.magazine { background: var(--paper); color: var(--ink); font-family: var(--
 }
 
 
+
+/* 轻量编辑图片节奏与今日更新 */
+.latest .major h2 { font-size: 15px; font-weight: 400; letter-spacing: .12em; color: #747b6c; border-bottom: 0; margin-bottom: 12px; }
+.latest .major h2 span { color: #9a9f93; letter-spacing: .04em; }
+.latest-list { max-width: 880px; }
+.latest-list a { grid-template-columns: 58px 1.25fr 1fr; padding: 12px 4px; }
+.latest-list time { color: var(--olive); font-size: 12px; }
+.latest-list strong { font-size: 18px; }
+.latest-list em { font-size: 13px; }
+.rhythm-image { margin: 0 0 18px; }
+.rhythm-image img, .story-photo img, .discover-photo img, .worth-photo img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 14px 4px 14px 4px; }
+.rhythm-image figcaption { color: var(--muted); font-size: 11px; margin-top: 8px; letter-spacing: .04em; }
+.rhythm-image--small { width: 38%; margin: 0 0 8px auto; }
+.rhythm-image--small img { aspect-ratio: 1.45; }
+.rhythm-image--wide { width: 72%; margin: 10px 0 0 8%; }
+.rhythm-image--wide img { aspect-ratio: 2.3; }
+.story-photo { grid-column: 1 / -1; width: 52%; margin: 12px 0 -4px auto; }
+.story-photo img { aspect-ratio: 2.1; }
+.discover-photo { width: 34%; margin: 0 0 24px auto; }
+.discover-photo img { aspect-ratio: 1.5; }
+.worth-photo { width: 40%; margin: 0 0 22px 4%; }
+.worth-photo img { aspect-ratio: 1.8; }
+.article-mood { margin: 0 0 38px; }
+.article-mood img { display: block; width: 100%; aspect-ratio: 2.15; object-fit: cover; border-radius: 16px 4px 16px 4px; }
+.article-mood figcaption { color: var(--muted); font-size: 11px; margin-top: 8px; letter-spacing: .05em; }
+@media (max-width: 736px) {
+  .latest-list a { grid-template-columns: 50px 1fr; gap: 7px 10px; }
+  .latest-list em { grid-column: 2; }
+  .latest-list strong { font-size: 16px; }
+  .rhythm-image--small, .rhythm-image--wide, .story-photo, .discover-photo, .worth-photo { width: 100%; margin: 0 0 18px; }
+  .rhythm-image--small img, .rhythm-image--wide img, .story-photo img, .discover-photo img, .worth-photo img { aspect-ratio: 1.55; }
+  .article-mood { margin-bottom: 26px; }
+  .article-mood img { aspect-ratio: 1.45; }
+}
+body.magazine { overflow-x: hidden; }
+.rhythm-image--portrait { width: 28%; margin: 0 12% 12px auto; }
+.rhythm-image--portrait img { aspect-ratio: 1.25; }
+@media (max-width: 736px) { .rhythm-image--portrait { width: 100%; margin: 0 0 18px; } }
