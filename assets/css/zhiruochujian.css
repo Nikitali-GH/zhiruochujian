@@ -352,3 +352,10 @@ body.magazine { overflow-x: hidden; }
 /* 保持编辑区块在不同屏幕宽度内闭合 */
 #stories { box-sizing: border-box; width: 100%; margin-left: 0; margin-right: 0; }
 @media (max-width: 736px) { #stories { margin-left: 0; margin-right: 0; padding-left: 24px !important; padding-right: 24px !important; } }
+
+.filter-bar { display:flex; flex-wrap:wrap; gap:8px 18px; margin: 18px 0 10px; border-bottom:1px solid var(--rule); padding-bottom:14px; }
+.filter-bar a { border:0; color:var(--muted); font-size:13px; }
+.filter-bar a.active, .filter-bar a:hover { color:var(--olive); }
+.filter-state { color:var(--muted); font-size:13px; margin:0 0 24px; }
+.filter-state a { color:var(--olive); }
+@media (max-width:736px){ .filter-bar { gap:8px 13px; } }
