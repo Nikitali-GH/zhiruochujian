@@ -359,3 +359,25 @@ body.magazine { overflow-x: hidden; }
 .filter-state { color:var(--muted); font-size:13px; margin:0 0 24px; }
 .filter-state a { color:var(--olive); }
 @media (max-width:736px){ .filter-bar { gap:8px 13px; } }
+
+/* 轻量读者调研 */
+.survey-invite { padding: 34px 0 40px; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.survey-invite h2 { margin: 2px 0 8px; font-size: 26px; font-weight: 400; }
+.survey-invite p:not(.section-label) { color: var(--muted); margin-bottom: 12px; }
+.survey-wrap { max-width: 720px !important; }
+.survey-form { margin-top: 34px; }
+.survey-form fieldset { border: 0; border-top: 1px solid var(--rule); padding: 24px 0 18px; margin: 0; }
+.survey-form legend { font-family: var(--serif); font-size: 19px; margin-bottom: 14px; }
+.survey-form label:not(.survey-text) { display: inline-flex; align-items: center; gap: 8px; margin: 0 18px 11px 0; color: #565d53; font-size: 15px; }
+.survey-form input[type="radio"], .survey-form input[type="checkbox"] { accent-color: var(--olive); }
+.survey-form .survey-text { display:block; color:#565d53; font-size:15px; margin: 22px 0; }
+.survey-form textarea, .survey-form input[type="email"] { display:block; width:100%; margin-top:9px; border:1px solid #d6d5c9; background:#fbfaf5; border-radius:8px; padding:11px 13px; color:var(--ink); font: inherit; }
+.survey-form textarea:focus, .survey-form input[type="email"]:focus { outline:2px solid rgba(105,113,88,.25); border-color:var(--olive); }
+.survey-form .optional, .survey-form .required { color:var(--muted); font: 12px var(--sans); margin-left:7px; }
+.survey-form .required { color:var(--olive); }
+.hidden-field { position:absolute; left:-9999px; }
+.privacy-note { color:var(--muted); font-size:12px; line-height:1.8; margin: 24px 0 18px; }
+.survey-submit { border:0; border-radius:20px 4px 20px 4px; background:var(--olive); color:#fff; padding:11px 20px; font:inherit; cursor:pointer; }
+.survey-submit span { margin-left:14px; }
+.survey-thanks { min-height:55vh; }
+@media (max-width:736px){ .survey-invite { padding:28px 0 32px; } .survey-form { margin-top:22px; } .survey-form legend { font-size:18px; } .survey-form label:not(.survey-text) { margin-right:13px; } }
