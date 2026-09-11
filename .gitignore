@@ -1,0 +1,10 @@
+# Local development and editor files
+node_modules/
+.env
+.env.*
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Local preview output
+*.log

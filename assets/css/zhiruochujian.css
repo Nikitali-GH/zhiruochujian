@@ -1,0 +1,158 @@
+@font-face { font-family: "Zhiruo Sans"; src: url("../fonts/NotoSansSC-Regular.otf") format("opentype"); font-style: normal; font-weight: 400; font-display: swap; }
+/* 知若初见 V1：保留 Editorial 基础样式，单独覆盖首页。 */
+:root { --paper: #f5f2eb; --ink: #333731; --muted: #6d7066; --olive: #697158; --rule: #d6d5c9; --serif: "Zhiruo Sans", "DengXian", "等线", "PingFang SC", "Microsoft YaHei", sans-serif; --sans: "Zhiruo Sans", "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans CJK SC", sans-serif; }
+html { scroll-behavior: auto; }
+body.magazine { background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.9; }
+.magazine *, .magazine *::before, .magazine *::after { animation: none !important; transition: none !important; }
+.magazine h1, .magazine h2, .magazine h3 { color: var(--ink); font-family: var(--serif); font-weight: 400; line-height: 1.65; letter-spacing: .015em; }
+.magazine h2 { font-size: 29px; }
+.magazine h3 { font-size: 24px; }
+.magazine p { margin-bottom: 1.1em; }
+.magazine a { color: inherit; border-bottom-color: var(--olive); }
+.magazine a:hover { color: var(--olive) !important; }
+.magazine a:focus-visible, .magazine summary:focus-visible { outline: 2px solid var(--olive); outline-offset: 6px; }
+.magazine section, .magazine article, #home, #about { scroll-margin-top: 24px; }
+.skip-link { position: fixed; left: 20px; top: -100px; background: var(--paper); padding: 8px 16px; z-index: 10; }
+.skip-link:focus { top: 12px; }
+#main > .inner { width: 100%; max-width: 1240px; padding: 0 56px; }
+#header { padding: 26px 0 23px; border-bottom: 1px solid var(--olive); align-items: center; justify-content: space-between; gap: 30px; }
+#header .logo { flex: 0 0 auto; font-family: var(--serif); font-size: 28px; font-weight: 500; letter-spacing: .16em; }
+#header nav { flex: 0 1 auto; display: flex; gap: 27px; font-size: 14px; }
+#header nav a { white-space: nowrap; border: 0; padding: 5px 0; }
+#header nav a[aria-current] { border-bottom: 1px solid var(--olive); }
+.masthead { padding: 28px 0 25px; }
+.masthead h1 { font-size: clamp(28px, 3.3vw, 42px); margin: 0 0 8px; }
+.masthead p { margin: 0; color: var(--muted); font-size: 15px; }
+#main > .inner > section { border-top: 1px solid var(--rule); padding: 40px 0; }
+#main > .inner > #banner { border-top: 1px solid var(--rule) !important; padding: 30px 0 36px; flex-direction: row; align-items: center; gap: 44px; }
+#banner .content { width: 45%; min-width: 0; }
+#banner h2 { font-size: clamp(26px, 2.4vw, 34px); margin: 10px 0 20px; }
+.magazine .section-label { font-family: var(--sans); font-size: 13px; font-weight: 500; color: var(--olive); letter-spacing: .12em; margin: 0 0 14px; }
+#banner .lead-excerpt { font-size: 15px; line-height: 1.95; color: #5c6158; }
+.magazine .publication-note { font-size: 12px; color: var(--muted); margin: 14px 0 0; letter-spacing: .025em; }
+#banner .image { margin: 0; width: 51%; height: auto; min-height: 0; max-height: none; position: relative; overflow: visible; }
+#banner .image img { display: block; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 0; }
+#banner figcaption { font-size: 10px; color: var(--muted); text-align: right; position: absolute; bottom: -22px; right: 0; }
+.magazine .image, .magazine .image img { border-radius: 0; }
+#main > .inner > .question { display: flex; gap: 50px; align-items: baseline; padding: 28px 0; }
+.question h2 { flex: 0 0 auto; }
+.question p { font: 400 24px/1.8 var(--serif); margin: 0; }
+.magazine header.major > h2 { border-bottom: 2px solid var(--olive); padding-bottom: 9px; margin: 0 0 26px; font-size: 19px; }
+.magazine .journal-posts { display: grid; grid-template-columns: 1.25fr 1fr; gap: 44px; width: 100%; margin: 0; }
+.magazine .journal-posts > article { padding: 0; margin: 0; width: auto; }
+.magazine .journal-posts article::before, .magazine .journal-posts article::after { display: none; }
+.featured-post .image { display: block; width: 100%; margin-bottom: 20px; }
+.featured-post .image img { width: 100%; height: auto; aspect-ratio: 2.2; object-fit: cover; }
+.magazine .featured-post h3 { font-size: 28px; margin: 0; }
+.side-posts { border-left: 1px solid var(--rule); padding-left: 38px; display: flex; flex-direction: column; justify-content: center; }
+.magazine .side-posts article { width: 100%; margin: 0; padding: 26px 0; }
+.side-posts article + article { border-top: 1px solid var(--rule); }
+.side-posts h3 { margin: 0; }
+#stories { display: grid; grid-template-columns: 1.25fr 1fr; gap: 44px; align-items: center; }
+#stories h2 { margin: 0; }
+.story-copy { color: #5c6158; }
+.text-link { font-size: 14px; display: inline-block; padding-bottom: 4px; }
+.text-link span { margin-left: 20px; }
+.discover-intro { color: var(--muted); font-size: 15px; }
+.perspectives { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 36px; }
+.perspectives details { border-top: 1px solid var(--rule); }
+.perspectives summary { cursor: pointer; padding: 15px 2px; font-size: 17px; list-style: none; }
+.perspectives summary::-webkit-details-marker { display: none; }
+.perspectives summary::after { content: '+'; float: right; color: var(--olive); }
+.perspectives details[open] summary::after { content: '−'; }
+.perspectives details p { font-size: 14px; color: var(--muted); }
+#main > .inner > #podcast { display: flex; align-items: center; gap: 38px; background: var(--olive); border: 0; padding: 30px 34px; margin: 8px 0 0; color: var(--paper); }
+#podcast h2, #podcast h3 { color: var(--paper); }
+#podcast h2 { font-size: 22px; margin: 0 0 12px; }
+.podcast-heading { border-right: 1px solid #a7ad99; padding-right: 36px; flex-shrink: 0; }
+.podcast-heading p, .podcast-content p { font-size: 13px; margin: 0; }
+#podcast h3 { font-size: 24px; margin: 0 0 12px; }
+.audio-status { margin: 0 0 0 auto !important; font-size: 12px; white-space: nowrap; }
+#main > .inner > #share { border-top: 0; padding: 48px 0; }
+#share h2 { margin: 0 0 18px; }
+#share > p:not(.section-label):not(.publication-note) { color: #5c6158; font-size: 15px; }
+#about { border-top: 1px solid var(--olive); padding: 28px 0; display: flex; justify-content: space-between; gap: 24px; align-items: flex-end; }
+.footer-brand { border: 0; font: 500 25px var(--serif); letter-spacing: .1em; }
+#about p { font-size: 13px; margin: 10px 0 0; color: var(--muted); }
+#about .credits { font-size: 10px; text-align: right; }
+.mobile-break { display: none; }
+@media (max-width: 980px) {
+  #main > .inner { padding: 0 32px; }
+  #header nav { gap: 19px; }
+  #main > .inner > #banner { gap: 28px; }
+  .desktop-break { display: none; }
+  .magazine .journal-posts, #stories { gap: 28px; }
+  .side-posts { padding-left: 24px; }
+}
+@media (max-width: 736px) {
+  body.magazine { font-size: 15px; }
+  #main > .inner { padding: 0 22px; }
+  #header { padding: 20px 0 15px; display: block; }
+  #header .logo { font-size: 26px; }
+  #header nav { margin-top: 14px; gap: 8px; justify-content: space-between; font-size: 13px; }
+  .masthead { padding: 24px 0; }
+  .masthead h1 { font-size: 29px; }
+  .masthead p { font-size: 14px; max-width: 29em; }
+  .mobile-break { display: initial; }
+  #main > .inner > #banner { flex-direction: column; gap: 20px; padding: 24px 0 38px; }
+  #banner .content, #banner .image { width: 100%; }
+  #banner h2 { font-size: 27px; margin: 6px 0 14px; }
+  #banner .lead-excerpt { font-size: 14px; }
+  #banner .image { height: auto; min-height: 0; max-height: none; }
+  #main > .inner > section { padding: 30px 0; }
+  #main > .inner > .question { display: block; padding: 25px 0; }
+  .question p { font-size: 22px; }
+  .magazine .journal-posts, #stories { grid-template-columns: 1fr; gap: 24px; }
+  .magazine .featured-post h3 { font-size: 26px; }
+  .side-posts { border-left: 0; padding-left: 0; border-top: 1px solid var(--rule); }
+  .magazine .side-posts article { padding: 22px 0; }
+  .magazine .side-posts article:last-child { padding-bottom: 0; }
+  .side-posts h3 { font-size: 23px; }
+  #stories h2, #share h2 { font-size: 26px; }
+  .perspectives { grid-template-columns: repeat(2, 1fr); column-gap: 22px; }
+  #main > .inner > #podcast { padding: 25px 22px; flex-wrap: wrap; gap: 20px; }
+  .podcast-heading { border: 0; padding: 0; display: flex; align-items: baseline; gap: 20px; width: 100%; }
+  #podcast h2 { margin: 0; }
+  #podcast h3 { font-size: 23px; }
+  .audio-status { margin: 0 !important; }
+  #main > .inner > #share { padding: 34px 0; }
+  #about { display: block; }
+  #about .credits { text-align: left; margin-top: 20px; }
+}
+
+
+/* 柔和的杂志封面：沿用现有 masthead 与 banner，不增加模块。 */
+#header { border-bottom-color: #d6d5c9; }
+.masthead { background: #e9e9df; margin-top: 24px; padding: 30px 38px 24px; border-radius: 8px 8px 0 0; }
+.masthead h1 { font-size: clamp(30px, 3vw, 41px); font-weight: 400; color: #4d5947; letter-spacing: .045em; margin-bottom: 12px; }
+.masthead p { color: #666d60; font-size: 15px; line-height: 1.9; }
+#main > .inner > #banner { background: #e9e9df; border-top: 0 !important; border-radius: 0 0 8px 8px; padding: 4px 38px 32px; gap: 34px; margin-bottom: 30px; align-items: center; }
+#banner .content { width: 45%; padding: 22px 0; }
+#banner .section-label { margin-bottom: 17px; }
+#banner h2 { font-size: clamp(25px, 2.15vw, 31px); line-height: 1.7; font-weight: 400; letter-spacing: .015em; margin: 0 0 22px; }
+#banner .lead-excerpt { font-size: 15px; line-height: 2.05; color: #60665b; max-width: 29em; }
+#banner .publication-note { margin-top: 24px; }
+#banner .image { width: 51%; }
+#banner .image img { aspect-ratio: 1.35; border-radius: 5px; object-position: 50% 70%; }
+#banner figcaption { font-family: var(--sans); font-size: 10px; bottom: -21px; }
+@media (max-width: 980px) {
+  .masthead { padding: 26px 26px 20px; }
+  #main > .inner > #banner { padding: 4px 26px 30px; gap: 26px; }
+  #banner h2 { font-size: 26px; }
+}
+@media (max-width: 736px) {
+  .masthead { margin-top: 18px; padding: 24px 20px 16px; }
+  .masthead h1 { font-size: 29px; line-height: 1.65; letter-spacing: .02em; }
+  .masthead p { font-size: 14px; }
+  #main > .inner > #banner { padding: 6px 20px 32px; gap: 20px; margin-bottom: 22px; }
+  #banner .content { width: 100%; padding: 0; }
+  #banner .image { width: 100%; }
+  #banner .section-label { margin-bottom: 10px; }
+  #banner h2 { font-size: clamp(23px, 6.1vw, 27px); margin-bottom: 16px; line-height: 1.7; letter-spacing: 0; }
+  #banner .lead-excerpt { font-size: 14px; line-height: 1.95; }
+  #banner .publication-note { margin-top: 15px; }
+  #banner .image img { aspect-ratio: 1.5; }
+  #banner figcaption { font-size: 9px; }
+}
+
+
