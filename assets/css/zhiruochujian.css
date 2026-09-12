@@ -427,6 +427,9 @@ body.magazine { overflow-x: hidden; }
 .home-video-card > p:not(.section-label) { margin: 0 0 7px; color: #5c6158; font-size: 13px; line-height: 1.75; }
 .home-video-card .text-link { border: 0; font-size: 13px; }
 .book-cover { display:flex; align-items:center; justify-content:center; width:100%; aspect-ratio:1.45; padding:20px; box-sizing:border-box; background:#d9cfc0; color:#4f5147; border-radius:12px 3px 12px 3px; text-align:center; font:24px/1.35 var(--serif); letter-spacing:.08em; }
+.video-cover-fallback { background: linear-gradient(135deg,#d8d3c7,#a9ad9a); position:relative; overflow:hidden; }
+.video-cover-fallback::before { content:'知若初见 · 视频'; position:absolute; inset:0; display:grid; place-items:center; color:#fff; font:18px var(--serif); letter-spacing:.12em; }
+.video-cover-fallback img { display:none; }
 @media (max-width:736px) {
   .video-showcase { padding: 34px 0 32px; }
   .video-showcase-heading h2 { font-size: 24px; }

@@ -18,6 +18,14 @@
       '</article>';
   }).join('');
 
+  list.querySelectorAll('.home-video-frame img').forEach(function (img) {
+    img.addEventListener('error', function () {
+      var frame = img.parentElement;
+      frame.classList.add('video-cover-fallback');
+      img.removeAttribute('src');
+    }, { once: true });
+  });
+
   list.addEventListener('click', function (event) {
     var button = event.target.closest('.home-video-play');
     if (!button) return;
