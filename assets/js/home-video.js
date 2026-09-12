@@ -10,7 +10,7 @@
     return '<article class="home-video-card ' + ratioClass + '" id="home-video-' + video.id + '">' +
       '<div class="home-video-frame" data-video-id="' + video.id + '">' +
       '<img src="' + thumbnail + '" alt="' + video.title + '" loading="lazy">' +
-      '<button type="button" class="home-video-play" aria-label="播放 ' + video.title + '">▶</button>' +
+      '<button type="button" class="home-video-play ' + (source.embedAllowed ? '' : 'is-external') + '" aria-label="' + (source.embedAllowed ? '播放 ' : '去' + source.platform + '观看 ') + video.title + '">' + (source.embedAllowed ? '▶' : '↗') + '</button>' +
       '<span class="home-video-platform">' + source.platform + '</span></div>' +
       '<p class="section-label">' + video.type + ' · ' + video.duration + '</p>' +
       '<h3>' + video.title + '</h3><p>' + video.summary + '</p>' +
